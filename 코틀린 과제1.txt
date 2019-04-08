@@ -1,0 +1,34 @@
+package com.example.esp55.pjs
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        var listener = View.OnClickListener { view ->
+            when(view.id){
+            R.id.button1 -> textView1.text = "æ»≥Á"
+            R.id.button2 -> textView1.text = "π›∞©¥Ÿ"
+        }
+        }
+        button1.setOnClickListener(listener)
+        button2.setOnClickListener(listener)
+
+        var listener3 =  BtnListener3()
+        button3.setOnClickListener(listener3)
+
+
+    }
+    
+    inner class BtnListener3: View.OnClickListener{
+        override fun onClick(v: View?) {
+            textView1.text = "»≠¿Ã∆√"
+        }
+    }
+}
