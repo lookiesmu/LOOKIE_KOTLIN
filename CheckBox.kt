@@ -7,7 +7,7 @@ import android.widget.CompoundButton
 import kotlinx.android.synthetic.main.activity_main.*
 import org.yscheon.button.R.id.*
 
-class CheckBox : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +34,7 @@ class CheckBox : AppCompatActivity() {
         override fun onCheckedChanged(c0: CompoundButton?, c1: Boolean) {
             if (c1 == true){
                 Check1.setEnabled(true)
+                textView1.setText("체크박스를 활성화 시켰습니다.")
             }
         }
     }
@@ -41,6 +42,7 @@ class CheckBox : AppCompatActivity() {
         override fun onCheckedChanged(c0: CompoundButton?, c1: Boolean) {
             if (c1 == true){
                 Check1.setEnabled(false)
+                textView1.setText("체크박스를 비활성화 시켰습니다.")
             }
         }
     }
