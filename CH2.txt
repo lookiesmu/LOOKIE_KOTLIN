@@ -1,0 +1,56 @@
+package com.example.user.myapplication2
+
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.widget.CompoundButton
+import kotlinx.android.synthetic.main.activity_main.*
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        btn.setOnClickListener { view->
+            textView.text = ""
+
+            if(checkBox.isChecked == true){
+                textView.append("체크박스가 체크되었습니다.")
+            }
+        }
+
+
+        var checklistener = CheckBoxListener()
+        checkBox.setOnCheckedChangeListener(checklistener)
+
+        var listener1 = RadioListener()
+        radio1.setOnCheckedChangeListener(listener1)
+        var listener2 = RadioListener2()
+        radio2.setOnCheckedChangeListener(listener2)
+    }
+
+    inner class CheckBoxListener : CompoundButton.OnCheckedChangeListener{
+        override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean){
+            if(p1 == true){
+                textView.text = "체크박스를 체크하였습니다."
+            }else{
+                textView.text = "체크박스를 체크 해제하였습니다."
+            }
+        }
+    }
+    inner class RadioListener : CompoundButton.OnCheckedChangeListener{
+        override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
+            if(p1 == true){
+                checkBox.setEnabled(true)
+                textView.setText("체크박스 활성화")
+            }
+        }
+    }
+    inner class RadioListener2 : CompoundButton.OnCheckedChangeListener{
+        override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
+            if(p1 == true){
+                checkBox.setEnabled(false)
+                textView.setText("체크박스 비활성화")
+            }
+        }
+    }
+}
