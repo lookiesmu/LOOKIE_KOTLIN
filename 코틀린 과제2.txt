@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+    <TextView
+            android:text="텍스트뷰입니다"
+            android:layout_width="match_parent"
+            android:layout_height="84dp" android:id="@+id/textView1"/>
+    <Button
+            android:text="button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/button1"/>
+    <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/checkBox1"/>
+    <RadioButton
+            android:text="CheckBoxOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/radioButton1"/>
+    <RadioButton
+            android:text="CheckBoxOff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/radioButton2"/>
+</LinearLayout>
+
+
+
+
+---------------------
+
+
+
+
+
+package com.example.esp55.pjs
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        var listener = View.OnClickListener { view ->
+
+            when (view.id) {
+
+                R.id.button1 -> {
+                    when (checkBox1.isChecked) {
+                        true -> textView1.text = "안녕"
+                        false -> textView1.text = "잘가요"
+                    }
+                }
+
+                R.id.radioButton1 -> {
+                    when(radioButton1.isChecked) {
+                        true -> checkBox1.setEnabled(true)
+                    }
+                }
+
+                R.id.radioButton2 -> {
+                    when(radioButton2.isChecked) {
+                        true -> checkBox1.setEnabled(false)
+                    }
+                }
+            }
+        }
+
+
+            button1.setOnClickListener(listener)
+            checkBox1.setOnClickListener(listener)
+            radioButton1.setOnClickListener(listener)
+            radioButton2.setOnClickListener(listener)
+    }
+
+}
