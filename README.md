@@ -12,7 +12,7 @@ RadioButton을 각각 CheckBoxOn, CheckBoxOff로 설정, On버튼 체크시 Chec
 Off버튼 체크시 CheckBox 비활성화 기능 구현
 
 조건 : RadioButton의 기본 상태는 CheckBoxOn 상태, 
-RadioButton에서 Off버튼 체크 시 CheckBox가 체크되지 않은 기능을 하도록 구현
+RadioButton에서 Off버튼 체크 후 버튼 클릭 시 텍스트뷰 메세지가 CheckBox가 체크되지 않은 메시지를 출력하도록 구현
 
 
 4월 1일 과제 
