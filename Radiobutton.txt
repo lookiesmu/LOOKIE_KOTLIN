@@ -1,0 +1,48 @@
+package com.example.radio
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.RadioGroup
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        button.setOnClickListener {view->
+            when(group.checkedRadioButtonId){
+                R.id.radioButton-> textView.text = radioButton.text
+                R.id.radioButton2 -> textView.text = radioButton2.text
+            }
+            checkBox.setOnClickListener{ view->
+                if(checkBox.isChecked == true) {
+                    radioButton.isEnabled = false
+                    radioButton2.isEnabled = false
+                    textView.text = " "
+                }else{
+                    radioButton.isEnabled = true
+                    radioButton2.isEnabled = true
+                    }
+                }
+            }
+       // var listener = RadioListener()
+        //group.setOnCheckedChangeListener(listener)
+    }
+/*
+    inner class RadioListener : RadioGroup.OnCheckedChangeListener {
+        override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
+            when (group?.id) {
+                R.id.group ->
+                    when (checkedId) {
+                        R.id.radioButton ->
+                            textView.text = radioButton.text
+                        R.id.radioButton2 ->
+                            textView.text = radioButton2.text
+                    }
+            }
+        }
+    }*/
+}
