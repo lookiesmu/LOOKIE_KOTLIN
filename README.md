@@ -1,9 +1,21 @@
 # 상명대학교 루키 코틀린 스터디
 
+4월 29일 과제
+
+Ch3. EditText, ImageView + (hashmap, Toast)
+
+ImageView 1개, TextView 1개, EditText 1개, Button 1개를 배치
+
+TextView에는 현재 가지고 있는 이미지들의 이름 목록이 보여진다.
+EditText에 이미지 이름 입력 후 Button을 클릭 시 ImageView는 해당하는 이미지로 바뀐다.
+만약 찾는 이미지가 없을 경우 Toast 메세지로 찾는 과일이 없음을 알려준다.
+
+조건 : Hashmap 사용을 권장합니다.
+
 
 4월 8일 과제 
 
-CheckBox, Radio button
+Ch2. CheckBox, Radio button
 
 메인 xml파일에 1개의 TextView, Button, CheckBox 2개의 Radio Button 세팅
 
@@ -17,7 +29,7 @@ RadioButton에서 Off버튼 체크 후 버튼 클릭 시 텍스트뷰 메세지�
 
 4월 1일 과제 
 
-Activity 실행, TextView, Button, Button Listener
+Ch1. Activity 실행, TextView, Button, Button Listener
 
 메인 xml파일에 1개의 텍스트뷰, 3개의 버튼 세팅 (각 버튼의 Text는 다르게 설정)
 버튼 클릭 시 해당 버튼의 text가 Textview에 보여짐
