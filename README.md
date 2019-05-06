@@ -1,5 +1,30 @@
 # 상명대학교 루키 코틀린 스터디
 
+5월 6일 과제
+
+Ch4. RecyclerView, Dialog
+
+class file 3개 (main, student, studentAdapter)
+XML file 3개 (main, studentview, dialogview)
+
+class
+ main - (-)
+ student - 학생의 정보(이름, 나이, 전공)을 담을 클래스
+ studentAdapter - main의 RecyclerView에 장착할 CustomAdapter
+ 
+XML
+ main - Button 1개, RecyclerView 1개
+ studentview - TextView 3개 (이름, 나이, 전공)
+ dialogview - EditText 3개 (이름, 나이, 전공)
+ 
+설명 :
+main화면의 Button 클릭 시 Dialog 보여진다.
+Dialog내에서 3개의 값 입력후 추가 버튼 클릭 시 main화면에 해당 학생정보가 추가되고 Dialog가 종료된다.
+취소 버튼 클릭 시 아무런 동작없이 Dialog가 종료된다.
+
+조건 : 학생 정보는 항상 리스트의 가장 위에 추가된다.
+Dialog의 editText값들이 채워지지 않은 경우는 고려하지 않는다. (예외처리 필요없음)
+
 4월 29일 과제
 
 Ch3. EditText, ImageView + (hashmap, Toast)
