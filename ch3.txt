@@ -1,0 +1,65 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ImageView android:layout_width="match_parent" android:layout_height="300dp"
+               android:src="@drawable/peach" android:id="@+id/imageview" android:visibility="invisible">
+    </ImageView>
+    <TextView
+            android:text="Blueberry, Peach, Tomato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:inputType="text"
+            android:hint="과일 이름을 입력해주세요."/>
+    <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/button"/>
+</LinearLayout>
+
+package org.yscheon.image
+
+import android.content.Context
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_image.*
+
+class Image : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_image)
+
+        var listner1 = btsListner()
+        button.setOnClickListener(listner1)
+    }
+    inner class btsListner: View.OnClickListener{
+        override fun onClick(v: View?) {
+            if(editText.text.toString()=="Blueberry"){
+                imageview.setVisibility(View.VISIBLE)
+                imageview.setImageResource(R.drawable.blueberry)
+            }
+            else if(editText.text.toString()=="Peach"){
+                imageview.setVisibility(View.VISIBLE)
+                imageview.setImageResource(R.drawable.peach)
+            }
+            else if(editText.text.toString()=="Tomato"){
+                imageview.setVisibility(View.VISIBLE)
+                imageview.setImageResource(R.drawable.tomato)
+            }
+            else{
+                imageview.setVisibility(View.INVISIBLE)
+            }
+        }
+    }
+}
