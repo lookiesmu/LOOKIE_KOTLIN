@@ -1,0 +1,42 @@
+package com.example.esp55.realhello
+
+import android.*
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        button1.setOnClickListener { view ->
+            var et = editText1.text.toString()
+
+            if(et == "neymar")
+            {
+                imageView1.setImageResource(R.drawable.s1)
+            }
+           else if (et == "ball")
+            {
+                imageView1.setImageResource(R.drawable.s2)
+            }
+            else if(et == "up")
+            {
+                imageView1.setImageResource(R.drawable.s3)
+            }
+            else
+            {
+                Toast.makeText(this, "¾Æ´Ï¾ß", Toast.LENGTH_LONG ).show()
+
+            }
+        }
+    }
+}
