@@ -1,0 +1,54 @@
+package com.example.esp55.realhello
+
+import android.*
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        var map = mapOf(Pair("neymar", R.drawable.s1),Pair("ball", R.drawable.s2),Pair("up", R.drawable.s3))
+
+        button1.setOnClickListener { view ->
+            var et = editText1.text.toString()
+
+            if(et != null){
+                var ve : Int= (map.get(et)!!.toInt())
+                imageView1.setImageResource(ve)
+            }
+            else
+                Toast.makeText(applicationContext,"찾는 사진이 없습니다.", Toast.LENGTH_SHORT).show()
+
+        }
+    }
+}
+
+/*
+
+if(et == "neymar")
+{
+    imageView1.setImageResource(R.drawable.s1)
+}
+else if (et == "ball")
+{
+    imageView1.setImageResource(R.drawable.s2)
+}
+else if(et == "up")
+{
+    imageView1.setImageResource(R.drawable.s3)
+}
+else
+{
+    Toast.makeText(this, "아니야", Toast.LENGTH_LONG ).show()
+}
+
+*/
