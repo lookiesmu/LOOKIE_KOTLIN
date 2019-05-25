@@ -6,10 +6,11 @@ Ch5, 6. Network (Okhttp), Action bar
 
 main xml - Textview 1개, Action Menu 1개, Menu 2개(로그인, 로그아웃), Alert Dialog 1개
 dialogview - EditText 2개(id, pw)
+
 설명 : 메뉴의 로그인을 누르면 로그인 페이지 Dialog 표시, id, pw 입력 후 다이얼로그 버튼 이용 로그인 시도,
 로그인 성공시 Main의 textview에 “id님 환영합니다” 표시
 로그인 실패시 “아이디가 없습니다” Toast 메시지 출력
-Okhttp 라이브러리를 이용 통신, 단 접근 방식은 post, 주소는 차후 공지
+Okhttp 라이브러리를 이용 통신, 단 접근 방식은 post, 주소 : https://8731a4ed-d833-4a6e-9c6f-aea06ed7c599.mock.pstmn.io/smulookie_ch6
 
 
 5월 6일 과제
